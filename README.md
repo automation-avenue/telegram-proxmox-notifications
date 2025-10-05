@@ -18,8 +18,8 @@ First script with notify_teams function to test connectivity <br />
 #!/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin
 
-TELEGRAM_ENDPOINT='https://api.telegram.org/bot7828829352:AAHsPw1yMlCm5puVbDbhUM5eEziFk-O-5zY/sendMessage'
-CHAT_ID='8269467503'
+TELEGRAM_ENDPOINT='https://api.telegram.org/bot<token>/sendMessage'
+CHAT_ID='<chat_id>'
 set -x
 
 notify_teams(){
@@ -36,8 +36,8 @@ Second script that runs temps but not in cron: <br />
 #!/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin
 
-TELEGRAM_ENDPOINT='https://api.telegram.org/bot7828829352:AAHsPw1yMlCm5puVbDbhUM5eEziFk-O-5zY/sendMessage'
-CHAT_ID='8269467503'
+TELEGRAM_ENDPOINT='https://api.telegram.org/bot<token>/sendMessage'
+CHAT_ID='<chat_id>'
 CPU_TEMP=$(sensors | grep Core | awk '{print $3}' | sed 's/[+]\([0-9]\+\)\..*/\1/' | sort -nr | head -n 1)
 set -x
 
@@ -55,8 +55,8 @@ root@pve:/tmp# cat telegram.sh
 #!/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin
 
-TELEGRAM_ENDPOINT='https://api.telegram.org/bot7828829352:AAHsPw1yMlCm5puVbDbhUM5eEziFk-O-5zY/sendMessage'
-CHAT_ID='8269467503'
+TELEGRAM_ENDPOINT='https://api.telegram.org/bot<token>/sendMessage'
+CHAT_ID='<chat_id>'
 CPU_TEMP=$(sensors | grep Core | awk '{print $3}' | sed 's/[+]\([0-9]\+\)\..*/\1/' | sort -nr | head -n 1)
 
 if  [ "$CPU_TEMP" -gt 65 ];
